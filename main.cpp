@@ -1,15 +1,15 @@
 #include <iostream>
 #include <string>
-int CheckRepeat(std::string A, std::string B) //проверяет колличество вхождения подстроки A в строку B
+int CheckRepeat(std::string A, std::string B) //ГЇГ°Г®ГўГҐГ°ГїГҐГІ ГЄГ®Г«Г«ГЁГ·ГҐГ±ГІГўГ® ГўГµГ®Г¦Г¤ГҐГ­ГЁГї ГЇГ®Г¤Г±ГІГ°Г®ГЄГЁ A Гў Г±ГІГ°Г®ГЄГі B
 {
 	int sum = 0;
 	int tmp;
 	int last = static_cast<int>(B.length() - A.length())+1;
-	//std::cout << "last index= " << B.length() << std::endl; // использовалось для тестирования
+	//std::cout << "last index= " << B.length() << std::endl; // ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г«Г®Г±Гј Г¤Г«Гї ГІГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГї
 	if (last < 0) return 0;
 	for (int i = 0; i < last; i++)
 	{
-	//	std::cout << "current index= " << i << std::endl; // использовалось для тестирования
+	//	std::cout << "current index= " << i << std::endl; // ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г«Г®Г±Гј Г¤Г«Гї ГІГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГї
 		tmp = i;
 		for (int k = 0; k < A.length(); k++)
 		{
@@ -24,7 +24,7 @@ int CheckRepeat(std::string A, std::string B) //проверяет колличество вхождения 
 	}
 	return sum;
 }
-std::string Maxrepeat(std::string A,int& x) // вычисляет максимально длинную повторяющуюся строку и колличество её вхождений 
+std::string Maxrepeat(std::string A,int& x) // ГўГ»Г·ГЁГ±Г«ГїГҐГІ Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­Г® Г¤Г«ГЁГ­Г­ГіГѕ ГЇГ®ГўГІГ®Г°ГїГѕГ№ГіГѕГ±Гї Г±ГІГ°Г®ГЄГі ГЁ ГЄГ®Г«Г«ГЁГ·ГҐГ±ГІГўГ® ГҐВё ГўГµГ®Г¦Г¤ГҐГ­ГЁГ© 
 {
     int max = 0; 
     std::string B;
@@ -32,7 +32,7 @@ std::string Maxrepeat(std::string A,int& x) // вычисляет максимально длинную пов
     for (int i = 1; i <= A.length()/2; i++)
     {
         B.clear();
-        B.append(A, 0, i);// - добавляет в конец строки B символы строки A начиная с символа с начала количеством i.
+        B.append(A, 0, i);// - Г¤Г®ГЎГ ГўГ«ГїГҐГІ Гў ГЄГ®Г­ГҐГ¶ Г±ГІГ°Г®ГЄГЁ B Г±ГЁГ¬ГўГ®Г«Г» Г±ГІГ°Г®ГЄГЁ A Г­Г Г·ГЁГ­Г Гї Г± Г±ГЁГ¬ГўГ®Г«Г  Г± Г­Г Г·Г Г«Г  ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ®Г¬ i.
 		if (CheckRepeat(B, C)) break;
 		std::cout << "\nchecking string: " << B << std::endl;
 		if (CheckRepeat(B, A) >= max && B.length() > 1) { max = CheckRepeat(B, A); std::cout << std::endl << "repeated string is: " << B << "\nrepeated count : " << max; if (B.length() > C.length()) { C.clear(); C = B; } }
@@ -40,7 +40,7 @@ std::string Maxrepeat(std::string A,int& x) // вычисляет максимально длинную пов
 	for (int i = A.length()/2; i >= 0; i--)
 	{
 		B.clear();
-		B.append(A,A.length()-i, i);// - добавляет в конец строки B символы строки A начиная с символа с начала количеством i.
+		B.append(A,A.length()-i, i);// - Г¤Г®ГЎГ ГўГ«ГїГҐГІ Гў ГЄГ®Г­ГҐГ¶ Г±ГІГ°Г®ГЄГЁ B Г±ГЁГ¬ГўГ®Г«Г» Г±ГІГ°Г®ГЄГЁ A Г­Г Г·ГЁГ­Г Гї Г± Г±ГЁГ¬ГўГ®Г«Г  Г± Г­Г Г·Г Г«Г  ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ®Г¬ i.
 		if (CheckRepeat(B, C)) break;
 		std::cout << "\nchecking string: " << B << std::endl;
 		if (CheckRepeat(B, A) >= max && B.length()>1) { max = CheckRepeat(B, A); std::cout << std::endl << "repeated string is: " << B << "\nrepeated count : " << max; if (B.length() > C.length()) { C.clear(); C = B; }
@@ -57,7 +57,7 @@ int main()
 	std::cout << "Input string for check:\n";
 	std::cin >> A;
 	std::string B = Maxrepeat(A, x);
-	if (A.size() == B.length()*x) std::cout << "\nRepeated string: "<< B  <<" K = " << B.length();
+	if (A.size() == B.length()*x) std::cout << "\nRepeated string: "<< B  <<" K = " << x;
 	else std::cout << "\nNone repeated string";
 	return 0;
 }
