@@ -50,14 +50,25 @@ std::string Maxrepeat(std::string A,int& x) // âû÷èñëÿåò ìàêñèìà
 	x = max;
     return C;
 }
+bool IsKPeriodic(std::string A, unsigned int K)
+{
+	int x = 0;
+	std::string B = Maxrepeat(A, x);
+	if (x == K || x%K==0) return true;
+	return false;
+}
 int main()
 {
 	std::string A;
 	int x = 0;
+	std::cout << "Input K:\n";
+	int K ;
+	std::cin >> K;
 	std::cout << "Input string for check:\n";
 	std::cin >> A;
-	std::string B = Maxrepeat(A, x);
-	if (A.size() == B.length()*x) std::cout << "\nRepeated string: "<< B  <<" K = " << x;
-	else std::cout << "\nNone repeated string";
+	if (IsKPeriodic(A, K)) std::cout << "\nTrue"; else std::cout << "\nFalse";
+	/*(/if (A.size() == B.length() * x) std::cout << "\nRepeated string: " << B << " K = " << x;
+	else std::cout << "\nNone repeated string";*/
+
 	return 0;
 }
